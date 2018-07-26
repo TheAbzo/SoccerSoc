@@ -4,4 +4,10 @@
     <string name="sign_up">REGISTER</string>
     <string name="hint_password">Password</string>
     <string name="hint_username">Username/Email</string>
+    <string name="next_btn">NEXT</string>
+    <string name="back_btn">GO BACK</string>
+    <string name="register_main_areuQ">You are a</string>
+    <string name="play_ground_owner">Play Ground Owner</string>
+    <string name="player">Soccer Player</string>
+
 </resources>
