@@ -17,7 +17,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="64dp"
-        android:background="@drawable/rounded_btn"
+        android:background="@drawable/red_rounded_btn"
         android:text="@string/log_in"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,18 +25,19 @@
 
     <Button
         android:id="@+id/button_sign_up"
-        android:layout_width="145dp"
-        android:layout_height="48dp"
+        android:layout_width="134dp"
+        android:layout_height="36dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginLeft="48dp"
-        android:layout_marginStart="48dp"
+        android:layout_marginLeft="52dp"
+        android:layout_marginStart="52dp"
         android:layout_marginTop="56dp"
-        android:background="#00FFFFFF"
+        android:background="@drawable/black_rounded_btn"
         android:text="@string/sign_up"
+        android:textColor="#ffe1f0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/button_log_in"
         app:layout_constraintTop_toBottomOf="@+id/button_log_in"
-        app:layout_constraintVertical_bias="0.739" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
         android:id="@+id/vector_football_image"

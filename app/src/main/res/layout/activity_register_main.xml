@@ -20,8 +20,8 @@
 
     <RadioButton
         android:id="@+id/player_radio_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="172dp"
+        android:layout_height="51dp"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
@@ -38,8 +38,8 @@
 
     <RadioButton
         android:id="@+id/owner_radio_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="172dp"
+        android:layout_height="51dp"
         android:layout_marginBottom="48dp"
         android:layout_marginEnd="44dp"
         android:layout_marginLeft="8dp"
@@ -55,13 +55,13 @@
 
     <Button
         android:id="@+id/next_btn"
-        android:layout_width="91dp"
-        android:layout_height="31dp"
+        android:layout_width="102dp"
+        android:layout_height="38dp"
         android:layout_marginTop="28dp"
-        android:background="@drawable/rounded_btn"
+        android:background="@drawable/red_rounded_btn"
         android:text="@string/next_btn"
-        android:textStyle="bold"
         android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/radioGroup"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
@@ -76,7 +76,8 @@
         android:textColor="@color/colorAccent"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:drawableStart="@drawable/back_icon" />
 
     <TextView
         android:id="@+id/you_are_a_text"

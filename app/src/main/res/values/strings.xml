@@ -6,8 +6,17 @@
     <string name="hint_username">Username/Email</string>
     <string name="next_btn">NEXT</string>
     <string name="back_btn">GO BACK</string>
-    <string name="register_main_areuQ">You are a</string>
+    <string name="register_main_areuQ">Account Type</string>
     <string name="play_ground_owner">Play Ground Owner</string>
     <string name="player">Soccer Player</string>
+    <string name="uploud">UPLOUD</string>
+    <string name="title_activity_test">test</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_whatever">whatever</string>
 
 </resources>
