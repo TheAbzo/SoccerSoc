@@ -19,9 +19,14 @@
         <activity android:name=".RegisterMain" />
         <activity android:name=".RegisterPlayer" />
         <activity
+
             android:name=".OwnerHomePage"
-            android:label="@string/title_activity_whatever"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:label="@string/title_activity_owner_home_page"
+            android:theme="@style/AppTheme.NoActionBar">
+
+
+
+        </activity>
     </application>
 
 </manifest>

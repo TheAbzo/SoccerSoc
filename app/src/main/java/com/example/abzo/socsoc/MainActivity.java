@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity  implements View.OnClickListener {
 
-    Button registerBtn;
+    Button registerBtn,loginBtn;
 
 
     @Override
@@ -21,7 +21,9 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
         registerBtn = (Button) findViewById(R.id.button_sign_up);//referncing
         registerBtn.setOnClickListener(this);
 
-
+       /////////////////////// just to test the owner home page activity ////////////////
+         loginBtn = (Button) findViewById(R.id.button_log_in);//referncing
+        loginBtn.setOnClickListener(this);
     }
 
     @Override
@@ -31,6 +33,13 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
 
                 //intent
                 Intent intent = new Intent(MainActivity.this, RegisterMain.class);
+                startActivity(intent);
+                break;
+            }
+            /////////////////////// just to test the owner home page activity ////////////////
+            case R.id.button_log_in: {
+                //intent
+                Intent intent = new Intent(MainActivity.this, OwnerHomePage.class);
                 startActivity(intent);
                 break;
             }
