@@ -21,7 +21,8 @@
         <activity
             android:name=".OwnerHomePage"
             android:label="@string/title_activity_whatever"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".RegisterOwner"></activity>
     </application>
 
 </manifest>

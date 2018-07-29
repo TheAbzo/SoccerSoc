@@ -4,12 +4,23 @@
     <string name="sign_up">REGISTER</string>
     <string name="hint_password">Password</string>
     <string name="hint_username">Username/Email</string>
+
     <string name="next_btn">NEXT</string>
     <string name="back_btn">GO BACK</string>
     <string name="register_main_areuQ">Account Type</string>
     <string name="play_ground_owner">Play Ground Owner</string>
     <string name="player">Soccer Player</string>
+
     <string name="uploud">UPLOUD</string>
+    <string name="name">Name:</string>
+    <string name="age">Age:</string>
+    <string name="telephone">Mobile #:</string>
+    <string name="address">Address:</string>
+    <string name="email">Email:</string>
+    <string name="username">Username:</string>
+    <string name="password">Password:</string>
+    <string name="play_ground_address">Play Ground Address:</string>
+
     <string name="title_activity_test">test</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>

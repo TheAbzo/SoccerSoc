@@ -25,23 +25,6 @@
         app:layout_constraintTop_toTopOf="@+id/textView_name_in" />
 
     <TextView
-        android:id="@+id/textView_age"
-        android:layout_width="wrap_content"
-        android:layout_height="24dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/age"
-        android:textColor="@color/colorPrimaryDark"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/textView_age_in"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_name" />
-
-    <TextView
         android:id="@+id/textView_telephone"
         android:layout_width="wrap_content"
         android:layout_height="24dp"
@@ -56,7 +39,7 @@
         app:layout_constraintEnd_toStartOf="@+id/textView_number_in"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_age" />
+        app:layout_constraintTop_toBottomOf="@+id/textView_name" />
 
     <TextView
         android:id="@+id/textView_userName"
@@ -111,12 +94,12 @@
 
     <TextView
         android:id="@+id/textView_address"
-        android:layout_width="wrap_content"
-        android:layout_height="24dp"
+        android:layout_width="93dp"
+        android:layout_height="40dp"
         android:layout_marginLeft="40dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="20dp"
-        android:text="@string/address"
+        android:text="@string/play_ground_address"
         android:textColor="@color/colorPrimaryDark"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -184,22 +167,13 @@
         app:layout_constraintTop_toBottomOf="@+id/textView_userName_in" />
 
     <TextView
-        android:id="@+id/textView_age_in"
+        android:id="@+id/textView_number_in"
         android:layout_width="226dp"
         android:layout_height="24dp"
         android:layout_marginTop="20dp"
         android:background="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="@+id/textView_name_in"
         app:layout_constraintTop_toBottomOf="@+id/textView_name_in" />
-
-    <TextView
-        android:id="@+id/textView_number_in"
-        android:layout_width="226dp"
-        android:layout_height="24dp"
-        android:layout_marginTop="20dp"
-        android:background="@color/colorPrimary"
-        app:layout_constraintEnd_toEndOf="@+id/textView_age_in"
-        app:layout_constraintTop_toBottomOf="@+id/textView_age_in" />
 
     <TextView
         android:id="@+id/textView_userName_in"
@@ -222,10 +196,10 @@
     <TextView
         android:id="@+id/textView_name_in"
         android:layout_width="226dp"
-        android:layout_height="24dp"
+        android:layout_height="22dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="64dp"
         android:background="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_uploud_pic" />
