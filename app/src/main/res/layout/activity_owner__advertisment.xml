@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Owner_Advertisment"
+    android:background="@drawable/baige"
+    >
+
+    <include
+        layout="@layout/app_bar_owner_home_page"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true" />
+
+    <ImageView
+        android:id="@+id/vector_advertise_image"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="59dp"
+        app:srcCompat="@drawable/ic_megaphone" />
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_below="@id/vector_advertise_image"
+    android:id="@+id/target_region_linearlayout"
+    >
+    <TextView
+        android:id="@+id/region_target_text_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/region_radius"
+        android:textSize="@dimen/region_target_text_size"
+         android:layout_weight="1"
+        android:layout_marginTop="@dimen/region_target_margin_top"
+        android:layout_marginLeft="@dimen/region_target_margin_left"
+        />
+
+    <SeekBar
+        android:id="@+id/advertise_seekbar"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/region_target_margin_top"
+        android:layout_marginRight="@dimen/region_target_margin_left"
+        />
+</LinearLayout>
+
+    <EditText
+        android:id="@+id/avertisment_message_edittext"
+        style="@style/Base.TextAppearance.AppCompat.Large"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/message_edit_text_height"
+        android:hint="@string/advertise_message_hint"
+        android:layout_below="@id/target_region_linearlayout"
+       android:layout_margin="@dimen/region_target_margin_left"
+
+        />
+       <Button
+           android:id="@+id/advertise_send_message_button"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="@string/advertise_send_message_button"
+           android:layout_alignParentBottom="true"
+           android:layout_alignParentRight="true"
+            android:layout_margin="@dimen/region_target_margin_top"
+           android:background="@drawable/side_nav_bar"
+           android:textColor="@color/colorPrimary"
+           />
+
+</RelativeLayout>

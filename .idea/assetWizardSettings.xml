@@ -90,8 +90,9 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="ic_notifications_black_24dp" />
-                            <entry key="sourceFile" value="C:\Users\Ahmed Saleh" />
+                            <entry key="assetSourceType" value="FILE" />
+                            <entry key="outputName" value="ic_megaphone" />
+                            <entry key="sourceFile" value="C:\Users\Ahmed Saleh\Downloads\megaphone.svg" />
                           </map>
                         </option>
                       </PersistentState>

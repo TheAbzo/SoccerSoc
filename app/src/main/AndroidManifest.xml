@@ -19,11 +19,13 @@
         <activity android:name=".RegisterMain" />
         <activity android:name=".RegisterPlayer" />
         <activity
-
             android:name=".OwnerHomePage"
             android:label="@string/title_activity_owner_home_page"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".Owner_Advertisment"
 
+            android:label="@string/title_activity_owner_advertis"
+            >
 
 
         </activity>
