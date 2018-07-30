@@ -159,9 +159,9 @@
 
     <TextView
         android:id="@+id/textView_email_in"
+        android:layout_marginTop="20dp"
         android:layout_width="226dp"
         android:layout_height="24dp"
-        android:layout_marginTop="20dp"
         android:background="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="@+id/textView_userName_in"
         app:layout_constraintTop_toBottomOf="@+id/textView_userName_in" />
@@ -199,7 +199,7 @@
         android:layout_height="22dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="52dp"
         android:background="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_uploud_pic" />
@@ -216,6 +216,28 @@
         android:background="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView_password_in" />
+
+    <TextView
+        android:id="@+id/textView_numberOfFields"
+        android:layout_width="87dp"
+        android:layout_height="39dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/number_of_fields"
+        android:textColor="@color/colorPrimaryDark"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_address" />
+
+    <EditText
+        android:id="@+id/textView_numberOfFields_in"
+        android:layout_width="226dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="@+id/textView_address_in"
+        app:layout_constraintTop_toBottomOf="@+id/textView_address_in" />
 
 
 

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:id="@+id/linear">
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        android:id="@+id/scroll">
+
+
+        <LinearLayout android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/layout"
+            android:orientation="vertical"/>
+    </ScrollView>
+
+    <Button
+        android:layout_width="70dp"
+        android:layout_height="30dp"
+        android:background="@drawable/red_rounded_btn"
+        android:layout_margin="8dp"
+        android:padding="4dp"
+        android:textColor="@color/colorPrimary"
+        android:layout_gravity="right"
+        android:gravity="center_horizontal"
+        android:text="Finish" />
+
+
+</LinearLayout>

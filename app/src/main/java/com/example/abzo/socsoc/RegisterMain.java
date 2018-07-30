@@ -13,6 +13,7 @@ public class RegisterMain extends AppCompatActivity implements View.OnClickListe
 
     //buttons
     Button nextbtn;
+    Button backBtn;
     RadioButton playerRadio;
     RadioButton ownerRadio;
 
@@ -26,12 +27,14 @@ public class RegisterMain extends AppCompatActivity implements View.OnClickListe
 
         //referencing
         nextbtn = (Button) findViewById(R.id.next_btn);
+        backBtn = (Button) findViewById(R.id.go_back_btn);
         radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
         playerRadio = (RadioButton) findViewById(R.id.player_radio_button);
         ownerRadio = (RadioButton) findViewById(R.id.owner_radio_button);
 
 
         nextbtn.setOnClickListener(this);
+        backBtn.setOnClickListener(this);
 
     }
 
@@ -66,11 +69,13 @@ public class RegisterMain extends AppCompatActivity implements View.OnClickListe
                     }
 
                 }
+                //TODO handle radio button scenarios// one of the radio buttons is checked
+            }
+            case R.id.go_back_btn: {
 
-                //TODO handle radio button scenarios
-                    // one of the radio buttons is checked
-
-
+                Intent intent = new Intent(RegisterMain.this, MainActivity.class);
+                startActivity(intent);
+                break;
             }
 
 

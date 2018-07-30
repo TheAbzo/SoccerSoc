@@ -9,20 +9,33 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RegisterMain" />
-        <activity android:name=".RegisterPlayer" />
+        <activity android:name=".RegisterMain"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden"/>
+        <activity android:name=".RegisterPlayer"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden"/>
         <activity
             android:name=".OwnerHomePage"
             android:label="@string/title_activity_whatever"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".RegisterOwner"></activity>
+        <activity android:name=".RegisterOwner"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden"/>
+        <activity android:name=".RegisterOwner2"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden">
+
+        </activity>
     </application>
 
 </manifest>
