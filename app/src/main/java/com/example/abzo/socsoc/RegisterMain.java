@@ -23,7 +23,7 @@ public class RegisterMain extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_main);
-        getSupportActionBar().hide();
+        //getSupportActionBar().hide();
 
         //referencing
         nextbtn = (Button) findViewById(R.id.next_btn);

@@ -18,7 +18,7 @@ public class RegisterOwner extends AppCompatActivity  implements View.OnClickLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_owner);
-        getSupportActionBar().hide();
+       // getSupportActionBar().hide();
 
         //referncing
         nextBtn = (Button) findViewById(R.id.next_btn);

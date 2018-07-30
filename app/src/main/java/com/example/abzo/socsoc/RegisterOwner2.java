@@ -18,7 +18,7 @@ public class RegisterOwner2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_owner2);
-        getSupportActionBar().hide();
+     //   getSupportActionBar().hide();
 
         // Parent layout
         LinearLayout parentLayout = (LinearLayout) findViewById(R.id.layout);

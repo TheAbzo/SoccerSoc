@@ -28,7 +28,22 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_whatever">whatever</string>
+    <string name="title_activity_owner_home_page">Owner Home Page</string>
+
+
+    <!-- strings for the navigation drawer in the owner home page -->
+    <string name="owner_advertise">Advertise</string>
+    <string name="owner_manage_fields">Manage Fields</string>
+    <string name="owner_edit_profile">Edit Profile</string>
+    <string name="logout">Logout</string>
+    <string name="action_notifications">Notifications</string>
+
+
+    <!-- strings for the owner advertisment activity-->
+    <string name="title_activity_owner_advertis">Advertisment</string>
+    <string name="region_radius">Region Target Radius</string>
+    <string name="advertise_message_hint">Type your message here</string>
+    <string name="advertise_send_message_button">Send</string>
 
     <string name="number_of_fields">Number Of Play Grounds</string>
     <string name="price">Price</string>

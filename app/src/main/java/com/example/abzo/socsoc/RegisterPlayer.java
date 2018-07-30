@@ -15,7 +15,7 @@ public class RegisterPlayer extends AppCompatActivity implements View.OnClickLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_player);
-        getSupportActionBar().hide();
+     //   getSupportActionBar().hide();
         backBtn = (Button) findViewById(R.id.go_back_btn_to_registermain);
 
         backBtn.setOnClickListener(this);
