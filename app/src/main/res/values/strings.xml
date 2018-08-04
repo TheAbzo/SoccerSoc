@@ -51,5 +51,13 @@
     <string name="availability_time">Available time</string>
     <string name="size">Size</string>
     <string name="insert_picture">Insert Field Picture</string>
+    <string name="title_activity_player_home_page">playerHomePage</string>
+
+    <!-- strings for the navigation drawer in the player home page -->
+    <string name="player_teams">Teams</string>
+    <string name="notification">Notification</string>
+    <string name="player_edit_profile">Edit Profile</string>
+    <string name="player_fields">Fields</string>
+    <string name="log_out">Log Out</string>
 
 </resources>

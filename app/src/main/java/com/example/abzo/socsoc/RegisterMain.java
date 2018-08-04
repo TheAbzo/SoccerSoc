@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 public class RegisterMain extends AppCompatActivity implements View.OnClickListener{
 
@@ -48,6 +49,8 @@ public class RegisterMain extends AppCompatActivity implements View.OnClickListe
                 if (radioGroup.getCheckedRadioButtonId() == -1) {
                     // no radio buttons are checked
                     //do a toast
+                    Toast.makeText(this, "Please choose something", Toast.LENGTH_SHORT).show();
+                    break;
                 }
                 else {
                     // one of the radio buttons is checked
@@ -77,9 +80,6 @@ public class RegisterMain extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
                 break;
             }
-
-
         }
-
     }
 }

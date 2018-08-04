@@ -2,14 +2,17 @@ package com.example.abzo.socsoc;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.app.ActionBar;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity  implements View.OnClickListener {
 
     Button registerBtn,loginBtn;
+    EditText password,login;
 
 
     @Override
@@ -18,6 +21,8 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
         setContentView(R.layout.activity_main);
        // getSupportActionBar().hide();
 
+
+        login = (EditText)findViewById(R.id.username_field_in_login);
         registerBtn = (Button) findViewById(R.id.button_sign_up);//referncing
         registerBtn.setOnClickListener(this);
 
@@ -39,9 +44,26 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
             /////////////////////// just to test the owner home page activity ////////////////
             case R.id.button_log_in: {
                 //intent
-                Intent intent = new Intent(MainActivity.this, OwnerHomePage.class);
-                startActivity(intent);
-                break;
+                String userName = login.getText().toString();
+
+                Log.d("username",userName);
+                if (userName.contains("player")){
+                    Log.d("player", userName);
+
+                    Intent intent = new Intent(MainActivity.this, PlayerHomePage.class);
+                    startActivity(intent);
+                    break;
+                }else if(userName.contains("owner")){
+
+                    Log.d("mytag", "player");
+
+                    Intent intent = new Intent(MainActivity.this, OwnerHomePage.class);
+                    startActivity(intent);
+                    break;
+                }else {
+                    Toast.makeText(this, "please type 'player' or 'owner'", Toast.LENGTH_SHORT).show();
+                }
+
             }
 
 

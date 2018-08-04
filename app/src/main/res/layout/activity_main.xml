@@ -55,7 +55,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_socsoc" />
 
-    <TextView
+    <EditText
         android:id="@+id/username_field_in_login"
         android:layout_width="200dp"
         android:layout_height="25dp"
@@ -69,20 +69,24 @@
         android:drawableLeft="@drawable/email_icon"
         android:hint="@string/hint_username"
         android:textSize="20sp"
+        android:imeOptions="actionNext"
+        android:singleLine="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/vector_football_image" />
 
-    <TextView
+    <EditText
         android:id="@+id/password_in_login"
         android:layout_width="200dp"
         android:layout_height="25dp"
-
+        android:password="true"
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:background="#1aB00020"
+        android:imeOptions="actionDone"
+        android:singleLine="true"
         android:drawableLeft="@drawable/password_lock_icon"
         android:hint="@string/hint_password"
         android:textSize="20sp"
