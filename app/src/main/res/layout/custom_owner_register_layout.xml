@@ -12,25 +12,26 @@
 
     <ImageView
         android:id="@+id/imageView_field"
-        android:layout_width="77dp"
-        android:layout_height="72dp"
-        android:layout_marginEnd="120dp"
+        android:layout_width="138dp"
+        android:layout_height="138dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginRight="120dp"
+        android:layout_marginRight="16dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toStartOf="@+id/uploud_field_pic_btn"
-        app:layout_constraintStart_toStartOf="@+id/textView_size"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/sym_def_app_icon" />
 
     <Button
         android:id="@+id/uploud_field_pic_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
-        android:layout_marginTop="72dp"
+        android:layout_width="185dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="164dp"
         android:background="#1aB00020"
         android:drawableRight="@drawable/uploud_icon"
         android:text="@string/insert_picture"
@@ -41,20 +42,21 @@
         android:id="@+id/textView_size"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="76dp"
         android:text="@string/size"
         android:textColor="@color/colorPrimaryDark"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/textView_price"
         app:layout_constraintTop_toBottomOf="@+id/imageView_field" />
 
-    <TextView
+    <EditText
         android:id="@+id/textView_size_in"
         android:layout_width="226dp"
         android:layout_height="24dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginRight="28dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginTop="76dp"
+        android:inputType="number"
         android:background="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView_field" />
@@ -72,12 +74,13 @@
         app:layout_constraintEnd_toStartOf="@+id/textView_price_in"
         app:layout_constraintTop_toBottomOf="@+id/textView_size" />
 
-    <TextView
+    <EditText
         android:id="@+id/textView_price_in"
 
         android:layout_width="226dp"
         android:layout_height="24dp"
         android:layout_marginTop="8dp"
+        android:inputType="number"
         android:background="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="@+id/textView_size_in"
         app:layout_constraintTop_toBottomOf="@+id/textView_size_in" />
@@ -86,14 +89,14 @@
         android:id="@+id/textView_available_day"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
         android:text="@string/availability_days"
-        android:textStyle="bold"
         android:textColor="@color/colorPrimaryDark"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/textView_price"
         app:layout_constraintTop_toBottomOf="@+id/textView_price" />
 
-    <TextView
+    <EditText
         android:id="@+id/textView_available_day_in"
         android:layout_width="226dp"
         android:layout_height="24dp"
@@ -108,15 +111,15 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:text="@string/availability_time"
-        android:textStyle="bold"
         android:textColor="@color/colorPrimaryDark"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/textView_available_day"
         app:layout_constraintTop_toBottomOf="@+id/textView_available_day" />
 
-    <TextView
+    <EditText
         android:id="@+id/textView_available_time_in"
         android:layout_width="226dp"
-        android:layout_height="24dp"
+        android:layout_height="21dp"
         android:layout_marginTop="8dp"
         android:background="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="@+id/textView_available_day_in"

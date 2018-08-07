@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/baige"
-    tools:context=".RegisterPlayer">
+    tools:context=".RegisterOwner">
 
     <TextView
         android:id="@+id/textView_name"
@@ -96,12 +96,16 @@
         android:id="@+id/textView_address"
         android:layout_width="93dp"
         android:layout_height="40dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginLeft="40dp"
+        android:layout_marginRight="8dp"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="16dp"
         android:text="@string/play_ground_address"
         android:textColor="@color/colorPrimaryDark"
         android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/textView_address_in"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView_password" />
 
@@ -140,6 +144,8 @@
         android:layout_marginLeft="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:onClick="onPictureClick"
+        android:scaleType="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/ic_launcher_round" />
@@ -166,38 +172,42 @@
         app:layout_constraintEnd_toEndOf="@+id/textView_userName_in"
         app:layout_constraintTop_toBottomOf="@+id/textView_userName_in" />
 
-    <TextView
+    <EditText
         android:id="@+id/textView_number_in"
         android:layout_width="226dp"
         android:layout_height="24dp"
+        android:inputType="number"
         android:layout_marginTop="20dp"
         android:background="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="@+id/textView_name_in"
         app:layout_constraintTop_toBottomOf="@+id/textView_name_in" />
 
-    <TextView
+    <EditText
         android:id="@+id/textView_userName_in"
         android:layout_width="226dp"
         android:layout_height="24dp"
         android:layout_marginTop="20dp"
+        android:inputType="text|number"
         android:background="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="@+id/textView_number_in"
         app:layout_constraintTop_toBottomOf="@+id/textView_number_in" />
 
-    <TextView
+    <EditText
         android:id="@+id/textView_password_in"
         android:layout_width="226dp"
         android:layout_height="24dp"
+        android:password="true"
         android:layout_marginTop="20dp"
         android:background="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="@+id/textView_email_in"
         app:layout_constraintTop_toBottomOf="@+id/textView_email_in" />
 
-    <TextView
+    <EditText
         android:id="@+id/textView_name_in"
         android:layout_width="226dp"
         android:layout_height="22dp"
         android:layout_marginEnd="16dp"
+        android:inputType="text"
         android:layout_marginRight="16dp"
         android:layout_marginTop="52dp"
         android:background="@color/colorPrimary"
@@ -206,7 +216,7 @@
 
 
 
-    <TextView
+    <EditText
         android:id="@+id/textView_address_in"
         android:layout_width="226dp"
         android:layout_height="24dp"
@@ -221,12 +231,16 @@
         android:id="@+id/textView_numberOfFields"
         android:layout_width="87dp"
         android:layout_height="39dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginLeft="40dp"
+        android:layout_marginRight="8dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="8dp"
         android:text="@string/number_of_fields"
         android:textColor="@color/colorPrimaryDark"
         android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/textView_numberOfFields_in"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView_address" />
 
@@ -236,6 +250,7 @@
         android:layout_height="24dp"
         android:layout_marginTop="20dp"
         android:background="@color/colorPrimary"
+        android:inputType="number"
         app:layout_constraintEnd_toEndOf="@+id/textView_address_in"
         app:layout_constraintTop_toBottomOf="@+id/textView_address_in" />
 

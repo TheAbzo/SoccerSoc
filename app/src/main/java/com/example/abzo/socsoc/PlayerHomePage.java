@@ -1,5 +1,6 @@
 package com.example.abzo.socsoc;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -73,17 +74,21 @@ public class PlayerHomePage extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        if (id == R.id.nav_fields) {
 
-        } else if (id == R.id.nav_slideshow) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.player_content, new PlayerFields()).commit();
+        } else if (id == R.id.nav_edit_profile_player) {
 
-        } else if (id == R.id.nav_manage) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.player_content, new PlayerEditProfile()).commit();
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_team) {
 
-        } else if (id == R.id.nav_send) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.player_content, new PlayerTeams()).commit();
+
+        } else if (id == R.id.nav_logout_player) {
+
+            Intent intent = new Intent(PlayerHomePage.this, MainActivity.class);
+             startActivity(intent);
 
         }
 

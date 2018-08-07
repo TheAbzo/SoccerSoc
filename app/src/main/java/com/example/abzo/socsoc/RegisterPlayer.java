@@ -94,7 +94,9 @@ public class RegisterPlayer extends AppCompatActivity implements View.OnClickLis
 
                 Intent intent = new Intent(RegisterPlayer.this, PlayerHomePage.class);
                 //send the URI
-                intent.putExtra("theURI",fullPhotoUri.toString());
+//                if(!fullPhotoUri.toString().equals("")){
+//                    intent.putExtra("theURI",fullPhotoUri.toString());
+//                }
                 startActivity(intent);
                 break;
             }

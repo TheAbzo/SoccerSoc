@@ -40,7 +40,7 @@
 
 
     <!-- strings for the owner advertisment activity-->
-    <string name="title_activity_owner_advertis">Advertisment</string>
+    <string name="title_activity_owner_advertis">Advertisement</string>
     <string name="region_radius">Region Target Radius</string>
     <string name="advertise_message_hint">Type your message here</string>
     <string name="advertise_send_message_button">Send</string>
@@ -59,5 +59,20 @@
     <string name="player_edit_profile">Edit Profile</string>
     <string name="player_fields">Fields</string>
     <string name="log_out">Log Out</string>
+
+    <string name="pick_a_date">Playing Date:</string>
+    <string name="field_price">Field Price:</string>
+    <string name="field_size">Field Size:</string>
+    <string name="pick_a_date_hint">Please Pick a Day</string>
+    <string name="pick_size_hint">Choose Field Size</string>
+    <string name="pick_price_hint">Choose Price Range Limit</string>
+
+    <!-- strings for the Buttons -->
+    <string name="search">Search</string>
+    <string name="edit">Edit</string>
+
+
+    <string name="account">Account</string>
+
 
 </resources>

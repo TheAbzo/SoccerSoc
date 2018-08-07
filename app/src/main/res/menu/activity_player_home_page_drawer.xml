@@ -9,20 +9,25 @@
             android:icon="@drawable/ic_team"
             android:title="@string/player_teams" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_fields"
             android:icon="@drawable/ic_field"
             android:title="@string/player_fields" />
+
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_edit_profile_player"
             android:icon="@drawable/ic_menu_edit"
-            android:title="Slideshow" />
+            android:title="@string/player_edit_profile" />
+
 
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="@string/account">
         <menu>
+
+
+
             <item
-                android:id="@+id/nav_send"
+                android:id="@+id/nav_logout_player"
                 android:icon="@drawable/ic_menu_logout"
                 android:title="@string/log_out" />
         </menu>

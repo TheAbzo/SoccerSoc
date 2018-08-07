@@ -7,21 +7,25 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class RegisterOwner2 extends AppCompatActivity {
+public class RegisterOwner2 extends AppCompatActivity implements View.OnClickListener {
 
     private String numberOfFields;
+    Button finishBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_owner2);
-     //   getSupportActionBar().hide();
+        //   getSupportActionBar().hide();
 
         // Parent layout
         LinearLayout parentLayout = (LinearLayout) findViewById(R.id.layout);
+        finishBtn = (Button) findViewById(R.id.finish_btn);
 
         // Layout inflater
         LayoutInflater layoutInflater = getLayoutInflater();
@@ -30,7 +34,7 @@ public class RegisterOwner2 extends AppCompatActivity {
         //todo change available time and date to something other than textview
         Intent comingIntent = getIntent();
 
-        if(comingIntent.hasExtra("FIELDS")){
+        if (comingIntent.hasExtra("FIELDS")) {
 
             numberOfFields = comingIntent.getStringExtra("FIELDS");
             //loop
@@ -44,13 +48,29 @@ public class RegisterOwner2 extends AppCompatActivity {
                 view = layoutInflater.inflate(R.layout.custom_owner_register_layout, parentLayout, false);
 
                 // In order to get the view we have to use the new view with text_layout in it
-                ConstraintLayout constraintLayout =  (ConstraintLayout) view.findViewById(R.id.child);
+                ConstraintLayout constraintLayout = (ConstraintLayout) view.findViewById(R.id.child);
 
-                 TextView textView = (TextView) view.findViewById(R.id.textView_to_be_filled);
-                 textView.setText("Field # " + (i+1));
+                TextView textView = (TextView) view.findViewById(R.id.textView_to_be_filled);
+                textView.setText("Field # " + (i + 1));
 
                 // Add the text view to the parent layout
                 parentLayout.addView(constraintLayout);
+            }
+
+        }
+
+        finishBtn.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.finish_btn: {
+
+                Intent intent = new Intent(RegisterOwner2.this, OwnerHomePage.class);
+                startActivity(intent);
+                break;
+
             }
 
         }
