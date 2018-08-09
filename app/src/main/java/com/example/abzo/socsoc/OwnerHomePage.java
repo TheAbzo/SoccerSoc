@@ -74,13 +74,19 @@ public class OwnerHomePage extends AppCompatActivity
 
         if (id == R.id.nav_advertise) {
             // Handle the advertisment action
-            Intent intent = new Intent(OwnerHomePage.this, Owner_Advertisment.class);
-            startActivity(intent);
+            getSupportFragmentManager().beginTransaction().replace(R.id.content_owner, new OwnerAdvertisment()).commit();
         } else if (id == R.id.nav_manage) {
+
+            getSupportFragmentManager().beginTransaction().replace(R.id.content_owner, new OwnerManageFields()).commit();
 
         } else if (id == R.id.nav_edit_profile) {
 
+            getSupportFragmentManager().beginTransaction().replace(R.id.content_owner, new OwnerEditProfile()).commit();
+
         } else if (id == R.id.nav_logout) {
+
+            Intent intent = new Intent(OwnerHomePage.this, MainActivity.class);
+            startActivity(intent);
 
         }
 

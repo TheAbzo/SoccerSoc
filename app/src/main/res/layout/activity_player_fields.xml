@@ -7,10 +7,6 @@
     android:layout_height="match_parent"
     android:background="@drawable/baige">
 
-    <include
-        layout="@layout/app_bar_player_home_page"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
 
 
 

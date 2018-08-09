@@ -9,18 +9,21 @@
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay"/>
+        android:theme="@style/AppTheme.AppBarOverlay">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        app:popupTheme="@style/AppTheme.PopupOverlay"
-        android:theme="@style/ToolbarTheme"
-        android:background="@color/colorAccent"
-        app:titleTextAppearance="@style/Toolbar.TitleText"
-        />
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            android:theme="@style/ToolbarTheme"
+            android:background="@color/colorAccent"
+            app:titleTextAppearance="@style/Toolbar.TitleText"
+            />
+
+    </android.support.design.widget.AppBarLayout>
 
     <include layout="@layout/content_player_home_page" />
 
 </android.support.design.widget.CoordinatorLayout>
+

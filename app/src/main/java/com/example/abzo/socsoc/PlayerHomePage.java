@@ -1,9 +1,14 @@
 package com.example.abzo.socsoc;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -13,9 +18,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 
 public class PlayerHomePage extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    ImageView playerProfilePic;
+    TextView playerUsername;
+    TextView playerEmail;
+    DataBaseHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +39,52 @@ public class PlayerHomePage extends AppCompatActivity
         setContentView(R.layout.activity_player_home_page);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        View headerView = navigationView.getHeaderView(0);
+
+        ImageView playerImage = (ImageView)headerView.findViewById(R.id.player_nav_pic);
+        TextView playerUsername = (TextView) headerView.findViewById(R.id.player_nav_username);
+        TextView PlayerEmail = (TextView) headerView.findViewById(R.id.player_nav_email);
+        //database stuff
+
+
+        //coming intent
+
+       //this.deleteDatabase("socData");
+        String username;
+        db = new DataBaseHelper(this);
+//       // Cursor idCursor = db.getDataFromName("abz");
+
+        Intent comingIntent = getIntent();
+
+        if (comingIntent.hasExtra("USERNAME")) {
+
+            username = comingIntent.getStringExtra("USERNAME");
+
+            Cursor idCursor = db.getDataFromName(username,"player");
+
+            if(idCursor!= null && idCursor.moveToFirst()){
+
+                playerUsername.setText(idCursor.getString(idCursor.getColumnIndex("username")) );
+                PlayerEmail.setText(idCursor.getString(idCursor.getColumnIndex("email")));
+
+                Uri thePicture = Uri.parse(idCursor.getString(idCursor.getColumnIndex("picture")));
+
+                //pic bitmap
+
+            } else {
+
+                Log.d("cursorID","Null");
+            }
+        }
+
+//        long aa = idCursor.getCount();
+//        Log.d("MYINT", "value: " + aa);
+
+
+
+
 
 
 
@@ -32,7 +94,7 @@ public class PlayerHomePage extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+
         navigationView.setNavigationItemSelectedListener(this);
     }
 

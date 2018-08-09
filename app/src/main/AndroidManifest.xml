@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.abzo.socsoc">
-
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_socsoc"
@@ -39,9 +43,6 @@
             android:name=".OwnerHomePage"
             android:label="@string/title_activity_owner_home_page"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".Owner_Advertisment"
-            android:label="@string/title_activity_owner_advertis" />
         <activity
             android:name=".PlayerHomePage"
             android:label="@string/title_activity_player_home_page"
