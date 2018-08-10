@@ -22,6 +22,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 
@@ -32,6 +34,7 @@ public class PlayerHomePage extends AppCompatActivity
     TextView playerUsername;
     TextView playerEmail;
     DataBaseHelper db;
+    String filePath;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,9 +49,8 @@ public class PlayerHomePage extends AppCompatActivity
         ImageView playerImage = (ImageView)headerView.findViewById(R.id.player_nav_pic);
         TextView playerUsername = (TextView) headerView.findViewById(R.id.player_nav_username);
         TextView PlayerEmail = (TextView) headerView.findViewById(R.id.player_nav_email);
+
         //database stuff
-
-
         //coming intent
 
        //this.deleteDatabase("socData");
@@ -62,17 +64,63 @@ public class PlayerHomePage extends AppCompatActivity
 
             username = comingIntent.getStringExtra("USERNAME");
 
-            Cursor idCursor = db.getDataFromName(username,"player");
+            Cursor idCursor = db.getDataFromUserName(username,"player");
 
             if(idCursor!= null && idCursor.moveToFirst()){
 
                 playerUsername.setText(idCursor.getString(idCursor.getColumnIndex("username")) );
                 PlayerEmail.setText(idCursor.getString(idCursor.getColumnIndex("email")));
 
-                Uri thePicture = Uri.parse(idCursor.getString(idCursor.getColumnIndex("picture")));
+//                Uri thePicture = Uri.parse(idCursor.getString(idCursor.getColumnIndex("picture"))); //TODO change uri to pic username
 
-                //pic bitmap
+                if(comingIntent.hasExtra("FILEPATH"))
+                {
 
+                    //saving image and changing its name
+                    filePath = comingIntent.getStringExtra("FILEPATH");
+                    String filename = "pippo.png";
+
+                    try {
+                        File f = new File(filePath, filename);
+                        Bitmap b = BitmapFactory.decodeStream(new FileInputStream(f));
+                        playerImage.setImageBitmap(b);
+
+                        String newName = username + ".png";
+                        Log.d("newName",newName);
+                        File newfile = new File(filePath,newName);
+                        f.renameTo(newfile);
+                        Log.d("Image","first load succcess");
+
+                    }
+                    catch (FileNotFoundException e)
+                    {
+                        e.printStackTrace();
+                        Log.d("Image","first load failed");
+
+                    }
+
+                }else{
+                    try {
+                       // File f = new File(filePath, username+".png");
+                     //   Log.d("2ndload ",f.getAbsolutePath()); filepath is null
+                        Bitmap b = BitmapFactory.decodeStream(new FileInputStream("/data/user/0/com.example.abzo.socsoc/app_imageDir/"+username+".png"));
+                        playerImage.setImageBitmap(b);
+
+                        Log.d("Image","second load succcess");
+
+                    }
+                    catch (FileNotFoundException e)
+                    {
+                        e.printStackTrace();
+                        Log.d("Image","second load failed");
+
+
+                    }
+                }
+
+               // Log.d("rightbefore","sadassd") ;
+
+               // Log.d("thefilePath",filePath) ;
             } else {
 
                 Log.d("cursorID","Null");

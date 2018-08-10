@@ -43,13 +43,15 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
                 break;
             }
             /////////////////////// just to test the owner home page activity ////////////////
+                //TODO if there is space after username handle it
+                //TODO handle all values of the users (e.g username with no spaces and unique)
             case R.id.button_log_in: {
                 //intent
                 String userName = login.getText().toString();
 
                 //check if exists in database
                 DataBaseHelper db = new DataBaseHelper(this);
-                Cursor idCursor = db.getDataFromName(userName,"player");
+                Cursor idCursor = db.getDataFromUserName(userName,"player");
 
 
                 if(idCursor!= null && idCursor.moveToFirst()){

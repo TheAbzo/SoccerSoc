@@ -1,9 +1,12 @@
 package com.example.abzo.socsoc;
 
+import android.content.Context;
+import android.content.ContextWrapper;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,7 +16,9 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.InputStream;
 
 public class RegisterPlayer extends AppCompatActivity implements View.OnClickListener{
@@ -23,6 +28,7 @@ public class RegisterPlayer extends AppCompatActivity implements View.OnClickLis
     private ImageView image;
     Uri fullPhotoUri;
     DataBaseHelper db;
+    String filename;
 
     Button nextBtn;
     Button backBtn;
@@ -33,7 +39,7 @@ public class RegisterPlayer extends AppCompatActivity implements View.OnClickLis
     EditText username;
     EditText email;
     EditText address;
-    Uri picture;
+    String picture;
     EditText telephone;
 
     @Override
@@ -83,7 +89,40 @@ public class RegisterPlayer extends AppCompatActivity implements View.OnClickLis
                 inputStream = getContentResolver().openInputStream(fullPhotoUri);
                 Bitmap theImage = BitmapFactory.decodeStream(inputStream);
                 image.setImageBitmap(theImage);
-                picture = fullPhotoUri;
+
+                /////
+                //saving image into file system
+
+                filename = "pippo.png";
+
+                try {
+                    //FileOutputStream fos = openFileOutput(FILENAME, Context.MODE_PRIVATE);
+                    ContextWrapper cw = new ContextWrapper(getApplicationContext());
+
+                    //creating image directory
+                    // path to /data/data/yourapp/app_data/imageDir
+                    File directory = cw.getDir("imageDir", Context.MODE_PRIVATE);
+
+                    // Create imageDir
+                    File myPath = new File(directory,filename);
+
+                    FileOutputStream out = new FileOutputStream(myPath);
+
+                    theImage.compress(Bitmap.CompressFormat.PNG, 90, out);
+                    out.flush();
+                    out.close();
+                    Log.d("Image","saved success");
+
+                   picture =  directory.getAbsolutePath();
+                    Log.d("pathis",picture);
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    Log.d("Image","saved failed");
+
+                }
+
+                ////
 
 
             }
@@ -122,8 +161,8 @@ public class RegisterPlayer extends AppCompatActivity implements View.OnClickLis
              //handle the exceptions
                 db = new DataBaseHelper(this);
 
-                Boolean savingProcess = db.saveDataPlayer(name.getText().toString(),age.getText().toString(),email.getText().toString(),
-                        username.getText().toString(),address.getText().toString(),picture.toString());
+                Boolean savingProcess = db.playerCreateUpdate(name.getText().toString(),age.getText().toString(),email.getText().toString(),
+                        username.getText().toString(),address.getText().toString(),true);
 
                 Log.d("Success?", savingProcess.toString());
 
@@ -131,6 +170,7 @@ public class RegisterPlayer extends AppCompatActivity implements View.OnClickLis
                 String userName = username.getText().toString();
                 Intent intent = new Intent(RegisterPlayer.this, PlayerHomePage.class);
                 intent.putExtra("USERNAME",userName);
+                intent.putExtra("FILEPATH",picture);
                 startActivity(intent);
                 //send the URI
 //                if(!fullPhotoUri.toString().equals("")){
