@@ -25,11 +25,11 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     private static final String OWNER_TABLE = "owner";
     private static final String OWNER_ID = "ID";
     private static final String OWNER_NAME = "name";
-    private static final String OWNER_AGE = "age";
     private static final String OWNER_EMAIL = "email";
     private static final String OWNER_USERNAME = "username";
     private static final String OWNER_ADDRESS = "address";
     private static final String OWNER_FIELDS = "fields_number";
+    private static final String OWNER_TELEPHONE = "owner_phone";
 
     //field table
     private static final String FIELD_TABLE = "field";
@@ -39,7 +39,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     private static final String FIELD_SIZE = "size";
     private static final String FIELD_DAYS = "days";
     private static final String FIELD_TIME = "time";
-    private static final String FIELD_OWNER = "owner_id";
+    private static final String FIELD_OWNER = "owner_username";
 
 
     //TODO change numeric values to integers
@@ -49,12 +49,12 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             COL1 +" TEXT,"+COL2 + " TEXT,"+COL3 +" TEXT,"+COL4 +" TEXT UNIQUE,"+COL5+" TEXT)";
 
     String CREATE_OWNER = "CREATE TABLE "+ OWNER_TABLE + "(" +OWNER_ID+ " INTEGER PRIMARY KEY AUTOINCREMENT," +
-            OWNER_NAME +" TEXT,"+OWNER_AGE + " TEXT,"+OWNER_EMAIL +" TEXT,"+OWNER_USERNAME +" TEXT UNIQUE,"
-            + OWNER_ADDRESS+" TEXT," + OWNER_FIELDS+" TEXT)";
+            OWNER_NAME +" TEXT,"+OWNER_EMAIL +" TEXT,"+OWNER_USERNAME +" TEXT UNIQUE,"
+            + OWNER_ADDRESS+" TEXT,"+ OWNER_TELEPHONE+" TEXT,"  + OWNER_FIELDS+" TEXT)";
 
     String CREATE_FIELD = "CREATE TABLE "+ FIELD_TABLE + "(" +FIELD_ID+ " INTEGER PRIMARY KEY AUTOINCREMENT," +
             FIELD_NAME +" TEXT,"+FIELD_PRICE + " TEXT,"+FIELD_SIZE +" TEXT,"+FIELD_DAYS +" TEXT UNIQUE,"
-            + FIELD_TIME+" TEXT,"+FIELD_OWNER+" INTEGER,"+" FOREIGN KEY ("+FIELD_OWNER+") REFERENCES "+OWNER_TABLE+" ("+OWNER_ID+"))";
+            + FIELD_TIME+" TEXT,"+FIELD_OWNER+" TEXT,"+" FOREIGN KEY ("+FIELD_OWNER+") REFERENCES "+OWNER_TABLE+" ("+OWNER_USERNAME+"))";
 
 
     public DataBaseHelper(Context context) {
@@ -131,7 +131,6 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     /**
      * updates ,creates based on username
      * @param   name
-     * @param   age
      * @param   email
      * @param   username
      * @param   address
@@ -139,18 +138,18 @@ public class DataBaseHelper extends SQLiteOpenHelper {
      * @param   create (1 for create ,0 for update)
      * @return true if  result success
      */
-    public boolean ownerCreateUpdate(String name, String age, String email, String username, String address,String fields,Boolean create ) {
+    public boolean ownerCreateUpdate(String name, String email, String username, String address,String telephone,String fields,Boolean create ) {
 
         long result;
 
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(OWNER_NAME, name);
-        contentValues.put(OWNER_AGE, age);
         contentValues.put(OWNER_EMAIL, email);
         contentValues.put(OWNER_USERNAME, username);
         contentValues.put(OWNER_ADDRESS, address);
         contentValues.put(OWNER_FIELDS, fields);
+        contentValues.put(OWNER_TELEPHONE, telephone);
 
         if(create == true)
             result = db.insert(OWNER_TABLE, null, contentValues);
@@ -186,11 +185,11 @@ public class DataBaseHelper extends SQLiteOpenHelper {
      * @param   size
      * @param   days
      * @param   time
-     * @param   owner_id
+     * @param   owner_username
      * @param   create (1 for create ,0 for update)
      * @return true if  result success
      */
-    public boolean fieldCreateUpdate(String name, String price, String size, String days, String time,String owner_id,Boolean create ) {
+    public boolean fieldCreateUpdate(String name, String price, String size, String days, String time,String owner_username,Boolean create ) {
 
         long result;
 
@@ -201,12 +200,12 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         contentValues.put(FIELD_SIZE, size);
         contentValues.put(FIELD_DAYS, days);
         contentValues.put(FIELD_TIME, time);
-        contentValues.put(FIELD_OWNER, owner_id);
+        contentValues.put(FIELD_OWNER, owner_username);
 
         if(create == true)
             result = db.insert(FIELD_TABLE, null, contentValues);
         else
-            result = db.update(FIELD_TABLE, contentValues, FIELD_OWNER + "=" + owner_id +" AND "+FIELD_NAME+"="+name, null);
+            result = db.update(FIELD_TABLE, contentValues, FIELD_OWNER + "=" + owner_username +" AND "+FIELD_NAME+"="+name, null);
 
         if (result == -1) {
             return false;
@@ -218,12 +217,12 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     /**
      * gets field by an id
-     * @param  id
+     * @param  owner_username
      * @return Cursor with user's data
      */
-    public Cursor getFieldsByOwnerName(int  id){
+    public Cursor getFieldsByOwnerName(String  owner_username){
         SQLiteDatabase db = this.getWritableDatabase();
-        String query = "SELECT * FROM " + FIELD_TABLE + " WHERE " +FIELD_OWNER+" = '" +id +"'";
+        String query = "SELECT * FROM " + FIELD_TABLE + " WHERE " +FIELD_OWNER+" = '" +owner_username +"'";
         Cursor data = db.rawQuery(query, null);
 
         return data;

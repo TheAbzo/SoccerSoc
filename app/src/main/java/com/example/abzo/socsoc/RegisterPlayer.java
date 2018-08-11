@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
-import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -50,11 +49,11 @@ public class RegisterPlayer extends AppCompatActivity implements View.OnClickLis
         image = (ImageView) findViewById(R.id.user_picture_register);
 
         age = (EditText) findViewById(R.id.textView_age_in);
-        name = (EditText) findViewById(R.id.textView_name_in);
-        username = (EditText) findViewById(R.id.textView_userName_in);
-        email = (EditText) findViewById(R.id.textView_email_in);
-        address = (EditText) findViewById(R.id.textView_address_in);
-        telephone = (EditText) findViewById(R.id.textView_number_in);
+        name = (EditText) findViewById(R.id.owner_name_in);
+        username = (EditText) findViewById(R.id.owner_userName_in);
+        email = (EditText) findViewById(R.id.owner_email_in);
+        address = (EditText) findViewById(R.id.owner_address_in);
+        telephone = (EditText) findViewById(R.id.owner_number_in);
 
         backBtn = (Button) findViewById(R.id.go_back_btn_to_registermain);
         uploud = (Button) findViewById(R.id.button_uploud_pic);
@@ -171,11 +170,6 @@ public class RegisterPlayer extends AppCompatActivity implements View.OnClickLis
                 Intent intent = new Intent(RegisterPlayer.this, PlayerHomePage.class);
                 intent.putExtra("USERNAME",userName);
                 intent.putExtra("FILEPATH",picture);
-                startActivity(intent);
-                //send the URI
-//                if(!fullPhotoUri.toString().equals("")){
-//                    intent.putExtra("theURI",fullPhotoUri.toString());
-//                }
                 startActivity(intent);
                 break;
             }

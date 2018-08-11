@@ -22,10 +22,10 @@
         android:textColor="@color/colorPrimaryDark"
         android:textSize="14sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/textView_name_in"
+        app:layout_constraintEnd_toStartOf="@+id/owner_name_in"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView_name_in" />
+        app:layout_constraintTop_toTopOf="@+id/owner_name_in" />
 
     <TextView
         android:id="@+id/textView_age"
@@ -56,7 +56,7 @@
         android:text="@string/telephone"
         android:textColor="@color/colorPrimaryDark"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/textView_number_in"
+        app:layout_constraintEnd_toStartOf="@+id/owner_number_in"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView_age" />
@@ -73,7 +73,7 @@
         android:text="@string/email"
         android:textColor="@color/colorPrimaryDark"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/textView_email_in"
+        app:layout_constraintEnd_toStartOf="@+id/owner_email_in"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView_telephone" />
@@ -90,7 +90,7 @@
         android:text="@string/password"
         android:textColor="@color/colorPrimaryDark"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/textView_password_in"
+        app:layout_constraintEnd_toStartOf="@+id/owner_password_in"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView_email" />
@@ -107,7 +107,7 @@
         android:text="@string/address"
         android:textColor="@color/colorPrimaryDark"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/textView_address_in"
+        app:layout_constraintEnd_toStartOf="@+id/owner_address_in"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView_password" />
@@ -154,14 +154,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/textView_email_in"
+        android:id="@+id/owner_email_in"
         android:layout_width="226dp"
         android:layout_height="24dp"
 
         android:layout_marginTop="20dp"
         android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toEndOf="@+id/textView_number_in"
-        app:layout_constraintTop_toBottomOf="@+id/textView_number_in" />
+        app:layout_constraintEnd_toEndOf="@+id/owner_number_in"
+        app:layout_constraintTop_toBottomOf="@+id/owner_number_in" />
 
     <EditText
         android:id="@+id/textView_age_in"
@@ -169,11 +169,11 @@
         android:layout_height="24dp"
         android:layout_marginTop="20dp"
         android:inputType="number"
-        app:layout_constraintEnd_toEndOf="@+id/textView_name_in"
-        app:layout_constraintTop_toBottomOf="@+id/textView_name_in" />
+        app:layout_constraintEnd_toEndOf="@+id/owner_name_in"
+        app:layout_constraintTop_toBottomOf="@+id/owner_name_in" />
 
     <EditText
-        android:id="@+id/textView_number_in"
+        android:id="@+id/owner_number_in"
         android:layout_width="226dp"
         android:layout_height="24dp"
         android:layout_marginTop="20dp"
@@ -182,17 +182,17 @@
         app:layout_constraintTop_toBottomOf="@+id/textView_age_in" />
 
     <EditText
-        android:id="@+id/textView_password_in"
+        android:id="@+id/owner_password_in"
         android:layout_width="226dp"
         android:layout_height="24dp"
         android:password="true"
         android:layout_marginTop="20dp"
 
-        app:layout_constraintEnd_toEndOf="@+id/textView_email_in"
-        app:layout_constraintTop_toBottomOf="@+id/textView_email_in" />
+        app:layout_constraintEnd_toEndOf="@+id/owner_email_in"
+        app:layout_constraintTop_toBottomOf="@+id/owner_email_in" />
 
     <EditText
-        android:id="@+id/textView_name_in"
+        android:id="@+id/owner_name_in"
         android:layout_width="226dp"
         android:layout_height="24dp"
         android:layout_marginEnd="16dp"
@@ -205,7 +205,7 @@
 
 
     <EditText
-        android:id="@+id/textView_address_in"
+        android:id="@+id/owner_address_in"
         android:layout_width="226dp"
         android:layout_height="23dp"
         android:layout_marginEnd="16dp"
@@ -215,8 +215,8 @@
         android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/textView_password_in"
-        app:layout_constraintTop_toBottomOf="@+id/textView_password_in" />
+        app:layout_constraintStart_toStartOf="@+id/owner_password_in"
+        app:layout_constraintTop_toBottomOf="@+id/owner_password_in" />
 
 
 

@@ -39,30 +39,33 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView_size"
+        android:id="@+id/textView_size_custom_reg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="16dp"
         android:text="@string/size"
         android:textColor="@color/colorPrimaryDark"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/textView_price"
-        app:layout_constraintTop_toBottomOf="@+id/imageView_field" />
+        app:layout_constraintStart_toStartOf="@+id/custom_name_reg"
+        app:layout_constraintTop_toBottomOf="@+id/custom_name_reg" />
 
     <EditText
-        android:id="@+id/textView_size_in"
+        android:id="@+id/textView_size_in_reg_custom"
         android:layout_width="226dp"
         android:layout_height="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
-        android:layout_marginTop="76dp"
-        android:inputType="number"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:paddingLeft="5dp"
+
+        android:layout_marginTop="12dp"
         android:background="@color/colorPrimary"
+        android:inputType="number"
+        android:hint="field size"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView_field" />
+        app:layout_constraintTop_toBottomOf="@+id/custom_name_in_reg" />
 
     <TextView
-        android:id="@+id/textView_price"
+        android:id="@+id/textView_price_custom_reg"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginEnd="64dp"
@@ -71,62 +74,69 @@
         android:text="@string/price"
         android:textColor="@color/colorPrimaryDark"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/textView_price_in"
-        app:layout_constraintTop_toBottomOf="@+id/textView_size" />
+        app:layout_constraintEnd_toStartOf="@+id/textView_price_in_custom_reg"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textView_size_custom_reg"
+        app:layout_constraintTop_toBottomOf="@+id/textView_size_custom_reg" />
 
     <EditText
-        android:id="@+id/textView_price_in"
-
+        android:id="@+id/textView_price_in_custom_reg"
+        android:paddingLeft="5dp"
         android:layout_width="226dp"
         android:layout_height="24dp"
         android:layout_marginTop="8dp"
         android:inputType="number"
+        android:hint="price/hr"
         android:background="@color/colorPrimary"
-        app:layout_constraintEnd_toEndOf="@+id/textView_size_in"
-        app:layout_constraintTop_toBottomOf="@+id/textView_size_in" />
+        app:layout_constraintEnd_toEndOf="@+id/textView_size_in_reg_custom"
+        app:layout_constraintTop_toBottomOf="@+id/textView_size_in_reg_custom" />
 
     <TextView
-        android:id="@+id/textView_available_day"
+        android:id="@+id/textView_available_day_custom_reg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:text="@string/availability_days"
         android:textColor="@color/colorPrimaryDark"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/textView_price"
-        app:layout_constraintTop_toBottomOf="@+id/textView_price" />
+        app:layout_constraintStart_toStartOf="@+id/textView_price_custom_reg"
+        app:layout_constraintTop_toBottomOf="@+id/textView_price_custom_reg" />
 
     <EditText
-        android:id="@+id/textView_available_day_in"
+        android:id="@+id/textView_available_day_in_custom_reg"
         android:layout_width="226dp"
         android:layout_height="24dp"
         android:layout_marginTop="8dp"
         android:background="@color/colorPrimary"
-        app:layout_constraintEnd_toEndOf="@+id/textView_price_in"
-        app:layout_constraintTop_toBottomOf="@+id/textView_price_in" />
+        android:hint="ex: (sun-wed)-mon"
+        android:paddingLeft="5dp"
+        app:layout_constraintEnd_toEndOf="@+id/textView_price_in_custom_reg"
+        app:layout_constraintTop_toBottomOf="@+id/textView_price_in_custom_reg" />
 
     <TextView
-        android:id="@+id/textView_available_time"
+        android:id="@+id/textView_available_time_custom_reg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:text="@string/availability_time"
         android:textColor="@color/colorPrimaryDark"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/textView_available_day"
-        app:layout_constraintTop_toBottomOf="@+id/textView_available_day" />
+        app:layout_constraintStart_toStartOf="@+id/textView_available_day_custom_reg"
+        app:layout_constraintTop_toBottomOf="@+id/textView_available_day_custom_reg" />
 
     <EditText
-        android:id="@+id/textView_available_time_in"
+        android:id="@+id/textView_available_time_in_custom_reg"
         android:layout_width="226dp"
         android:layout_height="21dp"
         android:layout_marginTop="8dp"
         android:background="@color/colorPrimary"
-        app:layout_constraintEnd_toEndOf="@+id/textView_available_day_in"
-        app:layout_constraintTop_toBottomOf="@+id/textView_available_day_in" />
+        android:hint="ex:(8am-11pm)-(2pm-5pm)"
+        android:paddingLeft="5dp"
+        app:layout_constraintEnd_toEndOf="@+id/textView_available_day_in_custom_reg"
+        app:layout_constraintTop_toBottomOf="@+id/textView_available_day_in_custom_reg" />
 
     <TextView
-        android:id="@+id/textView_to_be_filled"
+        android:id="@+id/textView_to_be_filled_custom_reg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
@@ -136,4 +146,32 @@
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/custom_name_reg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="72dp"
+        android:layout_marginRight="72dp"
+        android:layout_marginTop="72dp"
+        android:text="@string/name"
+        android:textColor="@color/colorPrimaryDark"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/custom_name_in_reg"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_field" />
+
+    <EditText
+        android:id="@+id/custom_name_in_reg"
+        android:layout_width="226dp"
+        android:layout_height="20dp"
+        android:paddingLeft="5dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="24dp"
+        android:background="@color/colorPrimary"
+        android:ems="10"
+        android:hint="field name /number"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/uploud_field_pic_btn" />
 </android.support.constraint.ConstraintLayout>

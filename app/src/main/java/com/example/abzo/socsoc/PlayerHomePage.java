@@ -43,7 +43,7 @@ public class PlayerHomePage extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);//TODO rename nav_view to nav_view_player
         View headerView = navigationView.getHeaderView(0);
 
         ImageView playerImage = (ImageView)headerView.findViewById(R.id.player_nav_pic);
@@ -51,12 +51,10 @@ public class PlayerHomePage extends AppCompatActivity
         TextView PlayerEmail = (TextView) headerView.findViewById(R.id.player_nav_email);
 
         //database stuff
-        //coming intent
-
        //this.deleteDatabase("socData");
         String username;
         db = new DataBaseHelper(this);
-//       // Cursor idCursor = db.getDataFromName("abz");
+       // Cursor idCursor = db.getDataFromName("abz");
 
         Intent comingIntent = getIntent();
 
@@ -71,7 +69,6 @@ public class PlayerHomePage extends AppCompatActivity
                 playerUsername.setText(idCursor.getString(idCursor.getColumnIndex("username")) );
                 PlayerEmail.setText(idCursor.getString(idCursor.getColumnIndex("email")));
 
-//                Uri thePicture = Uri.parse(idCursor.getString(idCursor.getColumnIndex("picture"))); //TODO change uri to pic username
 
                 if(comingIntent.hasExtra("FILEPATH"))
                 {
@@ -101,8 +98,6 @@ public class PlayerHomePage extends AppCompatActivity
 
                 }else{
                     try {
-                       // File f = new File(filePath, username+".png");
-                     //   Log.d("2ndload ",f.getAbsolutePath()); filepath is null
                         Bitmap b = BitmapFactory.decodeStream(new FileInputStream("/data/user/0/com.example.abzo.socsoc/app_imageDir/"+username+".png"));
                         playerImage.setImageBitmap(b);
 
@@ -118,24 +113,11 @@ public class PlayerHomePage extends AppCompatActivity
                     }
                 }
 
-               // Log.d("rightbefore","sadassd") ;
-
-               // Log.d("thefilePath",filePath) ;
             } else {
 
                 Log.d("cursorID","Null");
             }
         }
-
-//        long aa = idCursor.getCount();
-//        Log.d("MYINT", "value: " + aa);
-
-
-
-
-
-
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);

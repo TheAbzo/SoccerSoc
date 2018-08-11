@@ -1,6 +1,9 @@
 package com.example.abzo.socsoc;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -8,12 +11,22 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 
 public class OwnerHomePage extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    DataBaseHelper db;
+    String filePath = "/data/user/0/com.example.abzo.socsoc/app_imageDir/";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +35,66 @@ public class OwnerHomePage extends AppCompatActivity
         setSupportActionBar(toolbar);
         //getSupportActionBar().setDisplayShowTitleEnabled(false);
 
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view_owner);
+        View headerView = navigationView.getHeaderView(0);
+
+        ImageView ownerImage = (ImageView)headerView.findViewById(R.id.nav_owner_profile_pic);
+        TextView ownerUsername = (TextView) headerView.findViewById(R.id.nav_owner_username);
+        TextView ownerEmail = (TextView) headerView.findViewById(R.id.nav_owner_email);
+        /////filling data //todo put in a function
+        String username;
+        Intent comingIntent = getIntent();
+        db = new DataBaseHelper(this);
+
+        if(comingIntent.hasExtra("USERNAME")){
+
+            username = comingIntent.getStringExtra("USERNAME");
+            Cursor cursorData = db.getDataFromUserName(username,"owner");
+            if(cursorData!= null && cursorData.moveToFirst()){
+
+                ownerUsername.setText(cursorData.getString(cursorData.getColumnIndex("username")));
+                ownerEmail.setText(cursorData.getString(cursorData.getColumnIndex("email")));
+            }else {
+                Log.d("ownerData","Null");
+            }
+
+            if(comingIntent.hasExtra("COMING_FROM_MAIN_ACTIVITY")){
+
+                try {
+                    Bitmap b = BitmapFactory.decodeStream(new FileInputStream("/data/user/0/com.example.abzo.socsoc/app_imageDir/"+username+".png"));
+                    ownerImage.setImageBitmap(b);
+                    Log.d("Image","second load succcess");
+                }
+                catch (FileNotFoundException e)
+                {
+                    e.printStackTrace();
+                    Log.d("Image","second load failed");
+                }
+            }else {
+                String filename = "pippo.png";
+
+                try {
+                    File f = new File(filePath, filename);
+                    Bitmap b = BitmapFactory.decodeStream(new FileInputStream(f));
+                    ownerImage.setImageBitmap(b);
+
+                    String newName = username + ".png";
+                    Log.d("newName",newName);
+                    File newfile = new File(filePath,newName);
+                    f.renameTo(newfile);
+                    Log.d("Image","first load succcess");
+                }
+                catch (FileNotFoundException e)
+                {
+                    e.printStackTrace();
+                    Log.d("Image","first load failed");
+                }
+            }
+        }
+
+
+
+        ////
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -29,7 +102,6 @@ public class OwnerHomePage extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         //navigationView.setItemIconTintList(null);
         navigationView.setNavigationItemSelectedListener(this);
     }

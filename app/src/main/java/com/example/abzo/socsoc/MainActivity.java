@@ -51,10 +51,11 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
 
                 //check if exists in database
                 DataBaseHelper db = new DataBaseHelper(this);
-                Cursor idCursor = db.getDataFromUserName(userName,"player");
+                Cursor cursorPlayer = db.getDataFromUserName(userName,"player");
+                Cursor cursorOwner = db.getDataFromUserName(userName,"owner");
 
 
-                if(idCursor!= null && idCursor.moveToFirst()){
+                if(cursorPlayer!= null && cursorPlayer.moveToFirst()){
 
                     Intent intent = new Intent(MainActivity.this, PlayerHomePage.class);
                     intent.putExtra("USERNAME",userName);
@@ -63,11 +64,12 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
 
                 }
 
-                else if(userName.contains("owner")){
+                else if(cursorOwner!= null && cursorOwner.moveToFirst()){
 
-                    Log.d("mytag", "player");
-
+                    //COMING_FROM_MAIN_ACTIVITY
                     Intent intent = new Intent(MainActivity.this, OwnerHomePage.class);
+                    intent.putExtra("USERNAME",userName);
+                    intent.putExtra("COMING_FROM_MAIN_ACTIVITY","");
                     startActivity(intent);
                     break;
                 }else {
