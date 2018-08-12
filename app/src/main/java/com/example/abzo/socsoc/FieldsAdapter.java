@@ -39,7 +39,7 @@ public class FieldsAdapter extends RecyclerView.Adapter<FieldsAdapter.FieldViewH
 
     @Override
     public void onBindViewHolder(@NonNull FieldViewHolder holder, int position) {
-        holder.bind(mCursor);
+        holder.bind(mCursor,position);
 
     }
 
@@ -63,12 +63,14 @@ public class FieldsAdapter extends RecyclerView.Adapter<FieldsAdapter.FieldViewH
         }
 
 
-        void bind(Cursor cursor) {
+        void bind(Cursor cursor, int listIndex) {
             if(cursor!= null && cursor.moveToFirst()) {
+                cursor.move(listIndex);
+                    size.setText(cursor.getString(cursor.getColumnIndex("size")));
+                    name.setText(cursor.getString(cursor.getColumnIndex("name")));
+                    Log.d("hello","adapter is cool");
 
-                size.setText(cursor.getString(cursor.getColumnIndex("size")));
-                name.setText(cursor.getString(cursor.getColumnIndex("name")));
-                Log.d("hello","adapter is cool");
+
             }else {
                 Log.d("hello","adapter very sad");
             }
