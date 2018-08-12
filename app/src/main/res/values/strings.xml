@@ -70,6 +70,7 @@
     <!-- strings for the Buttons -->
     <string name="search">Search</string>
     <string name="edit">Edit</string>
+    <string name="add">add</string>
 
 
     <string name="account">Account</string>

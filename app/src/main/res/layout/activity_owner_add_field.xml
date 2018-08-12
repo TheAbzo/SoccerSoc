@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/baige"
+    android:layout_height="match_parent">
+    <include
+    layout="@layout/custom_owner_register_layout" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="37dp"
+        android:layout_gravity="right"
+        android:layout_margin="16dp"
+        android:background="@drawable/red_rounded_btn"
+        android:padding="8dp"
+        android:text="@string/add"
+        android:id="@+id/add_field_btn"
+        android:textColor="@color/colorPrimary" />
+
+</LinearLayout>

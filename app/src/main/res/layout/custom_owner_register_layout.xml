@@ -110,6 +110,8 @@
         android:background="@color/colorPrimary"
         android:hint="ex: (sun-wed)-mon"
         android:paddingLeft="5dp"
+        android:imeOptions="actionNext"
+        android:singleLine="true"
         app:layout_constraintEnd_toEndOf="@+id/textView_price_in_custom_reg"
         app:layout_constraintTop_toBottomOf="@+id/textView_price_in_custom_reg" />
 
@@ -132,6 +134,8 @@
         android:background="@color/colorPrimary"
         android:hint="ex:(8am-11pm)-(2pm-5pm)"
         android:paddingLeft="5dp"
+        android:imeOptions="actionDone"
+        android:singleLine="true"
         app:layout_constraintEnd_toEndOf="@+id/textView_available_day_in_custom_reg"
         app:layout_constraintTop_toBottomOf="@+id/textView_available_day_in_custom_reg" />
 
