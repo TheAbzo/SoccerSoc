@@ -70,6 +70,12 @@ public class OwnerAddField extends Fragment implements View.OnClickListener {
                 else
                     Toast.makeText(getActivity(), "Please Try again later", Toast.LENGTH_SHORT).show();
 
+                //open the other fragment
+                FragmentManager manager = getFragmentManager();
+                FragmentTransaction transaction = manager.beginTransaction();
+                transaction.replace(R.id.content_owner, new OwnerManageFields());
+                transaction.commit();
+
 
 
             }
