@@ -9,13 +9,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@mipmap/ic_launcher"
-        android:id="@+id/image"
+        android:id="@+id/image_manage"
         />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/name"
+        android:id="@+id/name_manage"
         android:text="name"
         android:gravity="center"
         android:textSize="26sp"
@@ -24,8 +24,8 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/price"
-        android:text="price"
+        android:id="@+id/size_manage"
+        android:text="@string/size"
         android:gravity="center"
         android:textSize="26sp"
         android:layout_weight="1"/>

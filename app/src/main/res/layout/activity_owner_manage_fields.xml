@@ -16,9 +16,10 @@
         android:id="@+id/scroll_manage_field">
 
 
-        <LinearLayout android:layout_width="fill_parent"
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/container_of_manage_fields"
+            android:id="@+id/recycler_of_manage_fields"
             android:orientation="vertical"/>
     </ScrollView>
 

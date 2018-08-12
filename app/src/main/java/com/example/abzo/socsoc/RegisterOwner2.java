@@ -32,6 +32,7 @@ public class RegisterOwner2 extends AppCompatActivity implements View.OnClickLis
     EditText availableTime;
 
     int ownerId;
+    LinearLayout parentLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,7 +40,7 @@ public class RegisterOwner2 extends AppCompatActivity implements View.OnClickLis
         //   getSupportActionBar().hide();
 
         // Parent layout
-        LinearLayout parentLayout = (LinearLayout) findViewById(R.id.layout);
+         parentLayout = (LinearLayout) findViewById(R.id.layout);
         finishBtn = (Button) findViewById(R.id.finish_btn);
 
         // Layout inflater
@@ -73,8 +74,8 @@ public class RegisterOwner2 extends AppCompatActivity implements View.OnClickLis
                 textView.setText("Field # " + (i + 1));
 
                 // Add the text view to the parent layout
-                parentLayout.addView(constraintLayout);
                 constraints.add(constraintLayout);
+                parentLayout.addView(constraintLayout);
             }
 
 
@@ -97,7 +98,7 @@ public class RegisterOwner2 extends AppCompatActivity implements View.OnClickLis
 
                 Log.d("Ssaassa", "value:"+ constraints.size());
                     for (int i = 0; i < constraints.size(); i++) {
-                        name = (EditText) constraints.get(i).findViewById(R.id.custom_name_in_reg);
+                        name = (EditText) parentLayout.getChildAt(i).findViewById(R.id.custom_name_in_reg);
                         size = (EditText) constraints.get(i).findViewById(R.id.textView_size_in_reg_custom);
                         price = (EditText) constraints.get(i).findViewById(R.id.textView_price_in_custom_reg);
                         availableDays = (EditText) constraints.get(i).findViewById(R.id.textView_available_day_in_custom_reg);
@@ -108,9 +109,12 @@ public class RegisterOwner2 extends AppCompatActivity implements View.OnClickLis
                             Toast.makeText(this, "Please fill all the fields ", Toast.LENGTH_SHORT).show();
 
                         }
-                       Boolean isSuccess =  db.fieldCreateUpdate(name.toString(), price.toString(), size.toString(), availableDays.toString(), availableTime.toString(),
+                       Boolean isSuccess =  db.fieldCreateUpdate(name.getText().toString(), price.getText().toString(),
+                               size.getText().toString(), availableDays.getText().toString(), availableTime.getText().toString(),
                       arrayReceived[3],true  );
                        Log.d("is Field saved",isSuccess.toString());
+                       Log.d("is Field saved name is",name.getText().toString());
+                       Log.d("is Field saved size is",size.getText().toString());
                     }
 
                 String userName = arrayReceived[3];

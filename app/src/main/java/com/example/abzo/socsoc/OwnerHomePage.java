@@ -146,8 +146,11 @@ public class OwnerHomePage extends AppCompatActivity
 
         if (id == R.id.nav_advertise) {
             // Handle the advertisment action
+            Log.d("hello","ads 1");
+
             getSupportFragmentManager().beginTransaction().replace(R.id.content_owner, new OwnerAdvertisment()).commit();
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_manage_fields) {
+            Log.d("hello","managing 1");
 
             getSupportFragmentManager().beginTransaction().replace(R.id.content_owner, new OwnerManageFields()).commit();
 
